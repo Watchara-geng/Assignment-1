@@ -1,2 +1,1 @@
-print('5555555555')
-print('6666666666')
+print('Watchara Sritonwong 613020233-2 section 1')
