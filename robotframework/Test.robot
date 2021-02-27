@@ -1,9 +1,14 @@
 *** Settings ***
-Library     SeleniumLibrary
+Library    SeleniumLibrary
+
+*** Variables ***
+${browser}    chrome
+${url}    https://google.com/
+${expected_result}     การ์ตูน
+
 *** Test Cases ***
-TC01 : Open Page
-    Open BROWSER     https://www.facebook.com     chrome
-    Input Text     id=email    fafaafii@hotmail.com
-    Input Text     id=pass    fa123456789
-    Click Button     login
-    Close Browser
+Search case
+    Open Browser     ${url}     ${browser}
+    Input Text    name=q    ${expected_result}
+    Submit Form  
+    Wait Until Page Contains    ${expected_result}
